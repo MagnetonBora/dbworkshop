@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import datetime
 
 from sqlalchemy import (
@@ -9,6 +10,10 @@ from sqlalchemy import (
     Date,
 )
 from sqlalchemy.orm import declarative_base, relationship
+=======
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base
+>>>>>>> 767e6151b0d747c7652e1baf737587a6e3a36ed2
 
 
 Base = declarative_base()
@@ -21,6 +26,7 @@ class Employee(Base):
     first_name = Column(String(50), nullable=False)
     last_name = Column(String(50), nullable=False)
 
+<<<<<<< HEAD
     salaries = relationship("Salary")
 
     def pay(self, amount, bonus, date=None, comments=None):
@@ -34,10 +40,13 @@ class Employee(Base):
 
         self.salaries.append(salary)
 
+=======
+>>>>>>> 767e6151b0d747c7652e1baf737587a6e3a36ed2
     def __repr__(self):
         return f"Employee({self.id}, {self.first_name}, {self.last_name})"
 
 
+<<<<<<< HEAD
 class Salary(Base):
     __tablename__ = "salaries"
 
@@ -57,6 +66,8 @@ class Salary(Base):
         return f"Salary({self.amount}, {self.date}, {self.employee_id})"
 
 
+=======
+>>>>>>> 767e6151b0d747c7652e1baf737587a6e3a36ed2
 class Department(Base):
     __tablename__ = "departments"
 
@@ -64,4 +75,8 @@ class Department(Base):
     name = Column(String(50), nullable=False)
 
     def __repr__(self):
+<<<<<<< HEAD
         return f"Department({self.id}, {self.name})"
+=======
+        return f"Department({self.id}, {self.name})"
+>>>>>>> 767e6151b0d747c7652e1baf737587a6e3a36ed2
